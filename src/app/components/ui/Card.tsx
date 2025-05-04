@@ -4,7 +4,7 @@ import { fonts } from '@/app/components/ui/fonts';
 export default function Card({ item }: {item: NewsItem}) {
   
   return (
-    <a className='flex flex-col group gap-1'
+    <a className='flex flex-col group gap-1 active:text-neutral-600'
       href={item.url}
       target='_blank'
     >
