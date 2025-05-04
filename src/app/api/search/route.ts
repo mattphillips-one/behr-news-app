@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     const query = searchParams.get('query');
 
     if (!query) {
-        return new Response("Query empty", { status: 400 });
+        return Response.json({message: "Query empty"});
     }
 
     try {
