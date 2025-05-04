@@ -27,9 +27,9 @@ export default function Search({ placeholder }: {placeholder: string}) {
   }
 
   return (
-    <div className='flex flex-col w-full gap-8'>
+    <div className='flex flex-col w-full'>
       <form onSubmit={handleSearch}
-      className='flex flex-col w-3xl self-center gap-5'>
+      className='flex flex-col w-full max-w-3xl self-center gap-3'>
         <input
           className='w-full p-4 py-3 outline-none border-[0.5px] border-stone-500 rounded-xs focus:border-stone-800 focus:ring-1 focus:ring-stone-200
             dark:border-stone-100'
@@ -39,7 +39,7 @@ export default function Search({ placeholder }: {placeholder: string}) {
         />
         <button type='submit'
         className='flex justify-end'>
-          <BlackButton label="Submit" />
+          <BlackButton label="" />
         </button>
       </form>
     </div>

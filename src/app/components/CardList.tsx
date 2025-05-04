@@ -1,15 +1,21 @@
 import Card from '@/app/components/ui/Card';
 import { NewsFeed, NewsItem } from '@/app/types/types';
 
+
+/*
+  TODO:
+  - Creative Card display
+*/
+
 export default async function CardList({ query }: { query: string }) {
   const port = process.env.URL || 'https://behr-news-app.vercel.app';
-  const response: Response = await fetch(`${port}/api/search?query=${query}`);
-  const { result } = await response?.json();
+  const response = await fetch(`${port}/api/search?query=${query}`);
+  const { results } = await response.json();
 
   return (
     <section className='max-w-2xl'>
       <ul className='flex flex-col gap-6'>
-        {result?.map((newsItem: NewsItem, i: number) => {
+        {results?.map((newsItem: NewsItem, i: number) => {
           return (
             <li key={i}>
               <Card item={newsItem}/>

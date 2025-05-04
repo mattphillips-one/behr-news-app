@@ -45,6 +45,7 @@ export default {
             const date = new Date(Date.parse(item.isoDate));
 
             const newsItem = {
+                pubId: "BHRRC",
                 title: item.title,
                 url: item.link,
                 desc: item.content || item.contentSnippet || "",
