@@ -19,7 +19,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
   return (
     <section className=''>
       <div className='text-center'>
-        <h1 className={`${fonts.noto_sans} text-3xl font-light`}>Search</h1>
+        <h1 className={`${fonts.radley} text-3xl font-light`}>Search</h1>
       </div>
       <div className='flex flex-col items-center m-6'>
         <Search placeholder="Search ..." />

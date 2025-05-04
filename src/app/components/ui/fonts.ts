@@ -1,4 +1,4 @@
-import { Ovo, Merriweather, Lora, Inter, Nunito_Sans, Lato, Outfit, Noto_Sans } from 'next/font/google';
+import { Ovo, Merriweather, Lora, Inter, Nunito_Sans, Lato, Outfit, Noto_Sans, Newsreader, Radley } from 'next/font/google';
 
 const ovo = Ovo({
     subsets: ["latin"],
@@ -40,6 +40,16 @@ const noto_sans = Noto_Sans({
     weight: ["300", "400"]
 });
 
+const newsreader = Newsreader({
+    subsets: ["latin"],
+    weight: ["300", "400"]
+});
+
+const radley = Radley({
+    subsets: ["latin"],
+    weight: ["400"]
+})
+
 export const fonts = {
     ovo: ovo.className,
     merriweather: merriweather.className,
@@ -48,5 +58,7 @@ export const fonts = {
     nunito_sans: nunito_sans.className,
     lato: lato.className,
     outfit: outfit.className,
-    noto_sans: noto_sans.className
+    noto_sans: noto_sans.className,
+    newsreader: newsreader.className,
+    radley: radley.className
 }
