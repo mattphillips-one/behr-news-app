@@ -8,7 +8,7 @@ import { NewsFeed, NewsItem } from '@/app/types/types';
 */
 
 export default async function CardList({ query }: { query: string }) {
-  const port = 'https://behr-api.vercel.app';
+  const port = 'https://behr-api.onrender.com';
   const response = await fetch(`${port}/search?query=${query}`);
   const { results } = await response.json();
 
