@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "BEHR News | Business Environment Human Rights",
-  description: "Business Environment Human Rights",
+  description: "BEHR News",
 };
 
 export default function RootLayout({
