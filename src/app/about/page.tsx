@@ -7,12 +7,13 @@ export default function AboutPage() {
       <p className={`${fonts.newsreader} max-w-3xl text-lg/7 text-justify`}>
         Business Environment & Human Rights News is an issue-focused search engine that hopes to
         increase the visibility of environmental and human rights reporting.
-        This project was created by software developer
-        <a className='text-blue-600'
+        This project is still in beta and continues to be updated to source the best and 
+        most relevant journalism of some of humanity's worst crimes.
+      </p>
+      <p className={`${fonts.ovo} justify-self-end mt-20`}>
+        This project was created by <a className='text-blue-600'
         href='https://mattphillips.space' 
-        target='_blank'> Matthew Phillips </a> 
-        and continues to be updated to source the best and most relevant journalism to some of 
-        humanities worst crimes.
+        target='_blank'>Matthew Phillips</a>
       </p>
     </section>
   )
