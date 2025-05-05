@@ -24,7 +24,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
       <div className='flex flex-col items-center m-6'>
         <Search placeholder="Search ..." />
       </div>
-      <div className='mx-6 lg:pl-[10%]'>
+      <div className='flex flex-col'>
         {(query !== '') ? 
           <Suspense key={query} fallback={<Loading />}>
             <CardList query={query} />

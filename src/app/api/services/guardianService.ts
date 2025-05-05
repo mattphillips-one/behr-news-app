@@ -1,4 +1,5 @@
 import { NewsItem, NewsFeed } from "@/app/types/types";
+import { type FilterFn } from '@/app/api/services/filterService';
 
 type GuardianResponse = {
     results: GuardianItem[]
@@ -18,7 +19,15 @@ type GuardianItem = {
     pillarName?: string
 }
 
+
 export default {
+
+    async get(term: string) {
+        const fetched = await this.fetchGuardian(term);
+        const parsed = this.parseGuardian(fetched, true);
+        return parsed;
+    },
+
     async fetchGuardian(term: string) {
         const api_key = process.env.GUARDIAN_KEY || "test";
         const page = 1;
@@ -28,8 +37,7 @@ export default {
         try {
             const res = await fetch(`https://content.guardianapis.com/search?page=${page}&q=${query}&api-key=${api_key}`);
             const { response } = await res.json();
-            const parsed = this.parseGuardian(response, true);
-            return parsed;
+            return response;
         } catch(error) {
             throw error;
         }
@@ -41,7 +49,7 @@ export default {
 
         for (const item of results) {
             
-            if (filter && this.filterGuardian(item)) {
+            if (filter && !this.filterGuardian(item)) {
                 continue;
             }
 
@@ -65,7 +73,8 @@ export default {
             || item.pillarId === 'pillar/sport'
             || item.pillarId === 'pillar/lifestyle'
         ) {
-            return true;
+            return false;
         }
+        return true;
     }
 }

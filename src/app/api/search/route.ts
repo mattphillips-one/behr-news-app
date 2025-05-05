@@ -3,6 +3,7 @@ import bhrrcService from '@/app/api/services/bhrrcService';
 import filterService from '@/app/api/services/filterService';
 import guardianService from '../services/guardianService';
 import { NewsFeed } from '@/app/types/types';
+import searchService from '../services/searchService';
 
 
 /*
@@ -22,16 +23,7 @@ export async function GET(request: NextRequest) {
     }
 
     try {
-        const bhrrcFeed = await bhrrcService.fetchBHRRC(query);
-        const bhrrcFeedFiltered = filterService.sortByRecent(bhrrcFeed);
-
-        const guardianFeed = await guardianService.fetchGuardian(query);
-        
-        const allFeeds: NewsFeed = [...bhrrcFeedFiltered, ...guardianFeed];
-        
-        const results = filterService.filterSlavery(allFeeds);
-        //console.log(results);
-        
+        const results = await searchService.getAll(query);
         return Response.json({results});
     } catch(error) {
         return Response.json({message: error});
