@@ -15,7 +15,7 @@ export default function Card({ item }: {item: NewsItem}) {
         <h2 className={`${fonts.merriweather} text-xl font-bold group-hover:underline decoration-1`}>{item.title}</h2>
       </div>
       <div>
-        <p className={`${fonts.inter}`}>{item.desc}</p>
+        <p className={`${fonts.inter}`}>{item.description}</p>
       </div>
       <div>
         <p className='text-sm font-light text-stone-600 dark:invert'>{item.pubDate}</p>
