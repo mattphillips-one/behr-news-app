@@ -1,13 +1,26 @@
+'use client';
+
 import Link from 'next/link';
 import { fonts } from '@/app/components/ui/fonts';
+import { usePathname } from 'next/navigation';
 
 const navItems = {
+  '/': {
+    name: 'search'
+  },
   '/about': {
     name: 'about',
   }
 }
 
 export function Navbar() {
+  const pathname = usePathname();
+  let isVisible = "invisible";
+  
+  // only show link to search if in about page
+  if (pathname === '/about') {
+    isVisible = "visible";
+  }
 
   return (
     <aside className="tracking-tight flex justify-between mb-10 md:mb-5">
@@ -18,17 +31,20 @@ export function Navbar() {
         >
           <a href='/' className={`${fonts.ovo} max-w-[50%] lg:max-w-xs text-xl lg:text-2xl m-3`}>Business Environment & Human Rights News</a>
           <div className="flex flex-row space-x-0">
-            {Object.entries(navItems).map(([path, { name }]) => {
-              return (
-                <Link
-                  key={path}
-                  href={path}
-                  className={`${fonts.newsreader} transition-all text-lg hover:text-neutral-800 hover:underline dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1`}
-                >
-                  {name}
-                </Link>
-              )
-            })}
+            <Link
+              key={'/search'}
+              href={'/'}
+              className={`${fonts.newsreader} ${isVisible} text-lg hover:text-neutral-800 hover:underline dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1`}
+            >
+              search
+            </Link>
+            <Link
+              key={'/about'}
+              href={'/about'}
+              className={`${fonts.newsreader} text-lg hover:text-neutral-800 hover:underline dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1`}
+            >
+              about
+            </Link>
           </div>
         </nav>
       </div>

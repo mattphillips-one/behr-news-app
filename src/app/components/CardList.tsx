@@ -1,5 +1,5 @@
 import Card from '@/app/components/ui/Card';
-import { NewsFeed, NewsItem } from '@/app/types/types';
+import { NewsItem } from '@/app/types/types';
 
 
 /*
