@@ -30,10 +30,10 @@ export default function FeaturedList() {
   ];
 
   return (
-    <section className='flex snap-x snap-mandatory overflow-x-scroll md:flex-col gap-6'>
+    <section className='flex snap-x snap-mandatory overflow-x-scroll md:flex-col gap-1 md:gap-6'>
       {featuredItems.map((newsItem: NewsItem, i: number) => {
         return (
-          <div className="snap-center min-w-xs first:ml-3 last:mr-3 md:first:ml-0 md:last:mr-0"
+          <div className="snap-start min-w-xs px-3"
             key={i}>
             <Card item={newsItem}/>
           </div>
