@@ -23,7 +23,7 @@ export function Navbar() {
   }
 
   return (
-    <aside className="tracking-tight flex justify-between mb-5">
+    <aside className="tracking-tight flex justify-between px-3 mb-5">
       <div className="w-full lg:sticky lg:top-20">
         <nav
           className="flex flex-row items-baseline justify-between relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"

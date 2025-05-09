@@ -25,18 +25,18 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
       */}
 
       <div className='flex flex-col md:flex-row justify-evenly'>
-        <div className="flex flex-col md:w-1/3 pr-3 lg:mt-6">
-          <h1 className={`${fonts.lato} font-light text-2xl border-b-1 border-neutral-600 py-2`}>
+        <div className="flex flex-col md:w-1/3 lg:mt-6 gap-2">
+          <h1 className={`${fonts.lato} font-light text-2xl/10 border-b-1 border-neutral-600 mx-3`}>
             Featured
           </h1>
-          <div className='flex flex-row py-3 overflow-x-scroll'>
+          <div className=''>
             <FeaturedList />
           </div>
           
         </div>
         
     
-        <div className='flex flex-col md:w-2/3 max-w-3xl md:pl-6'>
+        <div className='flex flex-col px-3 md:w-2/3 max-w-3xl md:pl-6'>
           <h1 className={`${fonts.lora} text-2xl font-light self-center py-2`}>Search</h1>
           <div className=''>
             <Search placeholder="Search ..." />
