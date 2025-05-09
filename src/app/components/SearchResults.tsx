@@ -1,5 +1,6 @@
-import Card from '@/app/components/ui/Card';
 import { NewsItem } from '@/app/types/types';
+import CardList from '@/app/components/ui/CardList';
+import Card from './ui/Card';
 
 
 /*
@@ -7,15 +8,20 @@ import { NewsItem } from '@/app/types/types';
   - Creative Card display
 */
 
-export default async function CardList({ query }: { query: string }) {
+export default async function SearchResults({ query, log }: { query: string, log: boolean }) {
   const port = 'https://behr-api.onrender.com';
   const response = await fetch(`${port}/search?query=${query}`);
   const { results } = await response.json();
+  const newsItems = results ?? [];
+
+  if (log) {
+    console.log(results);
+  }
 
   return (
-    <section className='max-w-3xl self-center'>
-      <ul className='flex flex-col gap-6 md:mr-[10%]'>
-        {results?.map((newsItem: NewsItem, i: number) => {
+    <section className=''>
+      <ul className={`flex flex-col gap-6`}>
+        {newsItems.map((newsItem: NewsItem, i: number) => {
           return (
             <li key={i}>
               <Card item={newsItem}/>

@@ -9,16 +9,16 @@ export default function Card({ item }: {item: NewsItem}) {
       target='_blank'
     >
       <div>
-        <p className={`text-sm text-stone-600 dark:invert`}>{item.pubId}</p>
+        <p className={`${fonts.lato} text-sm md:text-md text-stone-600 dark:invert`}>{item.pubId}</p>
       </div>
       <div>
-        <h2 className={`${fonts.merriweather} text-xl font-bold group-hover:underline decoration-1`}>{item.title}</h2>
+        <h2 className={`${fonts.merriweather} text-md md:text-xl group-hover:underline decoration-1`}>{item.title}</h2>
       </div>
       <div>
-        <p className={`${fonts.inter}`}>{item.description}</p>
+        <p className={`${fonts.lato} text-sm md:text-md`}>{item.description}</p>
       </div>
       <div>
-        <p className='text-sm font-light text-stone-600 dark:invert'>{item.pubDate}</p>
+        <p className={`${fonts.lato} text-sm md:text-md text-stone-600 dark:invert`}>{item.pubDate}</p>
       </div>
     </a>
   );
