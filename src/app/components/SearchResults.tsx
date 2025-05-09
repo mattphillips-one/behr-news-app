@@ -1,5 +1,4 @@
 import { NewsItem } from '@/app/types/types';
-import CardList from '@/app/components/ui/CardList';
 import Card from './ui/Card';
 
 
