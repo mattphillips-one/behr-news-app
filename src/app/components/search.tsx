@@ -3,6 +3,7 @@
 import { ChangeEvent, useState } from 'react';
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { BlackButton } from '@/app/components/ui/button-black';
+import { fonts } from '@/app/components/ui/fonts';
 
 export default function Search({ placeholder }: {placeholder: string}) {
   const searchParams = useSearchParams();
@@ -29,16 +30,16 @@ export default function Search({ placeholder }: {placeholder: string}) {
   return (
     <div className='flex flex-col w-full'>
       <form onSubmit={handleSearch}
-      className='flex flex-col w-full self-center gap-3'>
+      className='flex flex-col w-full self-center gap-2 p-3'>
         <input
-          className='w-full p-4 py-3 outline-none border-[0.5px] border-stone-500 rounded-sm focus:border-stone-800 focus:ring-1 focus:ring-stone-200
-            dark:border-stone-100'
+          className={`${fonts.outfit} w-full p-1 pt-4 pb-2 outline-none border-b-[0.5px] border-stone-500
+            dark:border-stone-100`}
           placeholder={placeholder}
           onChange={(e) => setQuery(e.target.value)}
           value={query}
         />
         <button type='submit'
-        className='flex justify-end'>
+          className='flex justify-end'>
           <BlackButton label="" />
         </button>
       </form>

@@ -2,7 +2,7 @@ import { fonts } from '@/app/components/ui/fonts';
 
 export default function AboutPage() {
   return (
-    <section className='flex flex-col items-center gap-6 px-4 mt-6 md:mt-0'>
+    <section className='flex flex-col items-center gap-6 px-4 mt-6'>
       <h1 className={`${fonts.ovo} text-3xl`}>About this project</h1>
       <p className={`${fonts.stix} max-w-3xl text-lg/7 text-justify`}>
         Business Environment & Human Rights News is an issue-focused search engine that hopes to

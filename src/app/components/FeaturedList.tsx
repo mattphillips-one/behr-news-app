@@ -35,10 +35,33 @@ export default function FeaturedList() {
         return (
           <div className="snap-start min-w-xs px-3"
             key={i}>
-            <Card item={newsItem}/>
+            <FeaturedCard item={newsItem}/>
           </div>
         );
       })}
     </section>
+  );
+}
+
+function FeaturedCard({ item }: {item: NewsItem}) {
+  
+  return (
+    <a className='flex flex-col group gap-1 active:text-neutral-600'
+      href={item.url}
+      target='_blank'
+    >
+      <div>
+        <p className={`${fonts.lato} text-sm md:text-md text-stone-600 dark:invert`}>{item.pubId}</p>
+      </div>
+      <div>
+        <h2 className={`${fonts.merriweather} text-lg md:text-xl group-hover:underline decoration-1`}>{item.title}</h2>
+      </div>
+      <div>
+        <p className={`${fonts.lato} hidden text-sm md:text-md md:block`}>{item.description}</p>
+      </div>
+      <div>
+        <p className={`${fonts.lato} text-sm md:text-md text-stone-600 dark:invert`}>{item.pubDate}</p>
+      </div>
+    </a>
   );
 }
