@@ -18,7 +18,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
           <h1 className={`${fonts.lato} font-light text-2xl/10 border-b-1 border-neutral-600 mx-3 md:ml-0`}>
             Featured
           </h1>
-          <div className='md:mr-3'>
+          <div className='pt-1 md:mr-3'>
             <FeaturedList />
           </div>
         </div>
