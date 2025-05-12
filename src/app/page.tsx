@@ -24,7 +24,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
         </div>
         
     
-        <div className='flex flex-col pt-6 md:px-4 md:w-2/3 max-w-3xl md:pl-6'>
+        <div className='flex flex-col pt-4 md:pt-6 md:px-4 md:w-2/3 max-w-3xl md:pl-6'>
           <h1 className={`${fonts.lato} font-light text-right text-2xl/10 border-t-1 md:border-t-0 md:border-b-1 border-neutral-600 mx-3 md:ml-0`}>
             Search
           </h1>

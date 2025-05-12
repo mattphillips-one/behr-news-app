@@ -32,8 +32,7 @@ export default function Search({ placeholder }: {placeholder: string}) {
       <form onSubmit={handleSearch}
       className='flex flex-col w-full self-center gap-2 p-3'>
         <input
-          className={`${fonts.outfit} w-full p-1 pt-4 pb-2 outline-none border-b-[0.5px] border-stone-500
-            dark:border-stone-100`}
+          className={`${fonts.outfit} w-full p-1 pt-4 pb-2 outline-none border-b-[0.5px] border-stone-500 dark:border-stone-100`}
           placeholder={placeholder}
           onChange={(e) => setQuery(e.target.value)}
           value={query}
