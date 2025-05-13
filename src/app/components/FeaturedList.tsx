@@ -24,7 +24,7 @@ export default function FeaturedList() {
       pubId: "Coffee Watch",
       title: '\"Ghost Farms and Coffee Laundering\"',
       description: "How labor violations enter Starbucks’ and Nestlé’s Chinese coffee supply chain",
-      url: 'coffeewatch.org/ghost-farms-and-coffee-laundering/',
+      url: 'https://coffeewatch.org/ghost-farms-and-coffee-laundering/',
       pubDate: '29 Nov 2024'
     }
   ];
