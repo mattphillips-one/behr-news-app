@@ -39,8 +39,6 @@ export default function RootLayout({
             </div>
             <TopicNavbar />
           </nav>
-          
-
           {children}
         </main>
       </body>
