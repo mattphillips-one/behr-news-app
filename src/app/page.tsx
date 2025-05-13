@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import Loading from '@/app/components/ui/load-dots';
 import FeaturedList from "./components/FeaturedList";
 import LatestList from "@/app/components/LatestList";
+import TrendingBar from "@/app/components/TrendingBar";
 
 /*
   TODO: create programmatic trending bar
@@ -45,22 +46,12 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
           </h1>
 
           {/* Trending bar: create programmatically */}
-          <span className={`flex gap-3 ${fonts.outfit} pr-3 py-2`}>
-            <p>Trending: </p>
-            <a href='/?query=coffee'>coffee</a>
-            <p className='text-red-600'>•</p>
-            <a href='/?query=mining'>mining</a>
-            <p className='text-red-600'>•</p>
-            <a href='/?query=uyghur'>Uyghur</a>
-            <p className='text-red-600'>•</p>
-            <a href='/?query=oil'>oil</a>
+          <span className={`flex flex-row ${fonts.outfit} pr-3 py-2`}>
+            <p className="pr-3">Trending: </p>
+            <TrendingBar />
           </span>
 
-
-          {/*<h1 className={`${fonts.lora} text-2xl font-light self-center py-2`}>Search</h1>*/}
-          <div className=''>
-            <Search placeholder="Search ..." />
-          </div>
+          <Search placeholder="Search ..." />
           <div className='pb-5'>
             {(query !== '') ? 
               <Suspense key={query} fallback={<Loading />}>

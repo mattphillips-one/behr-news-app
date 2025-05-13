@@ -9,8 +9,7 @@ export default function Search({ placeholder }: {placeholder: string}) {
   const searchParams = useSearchParams();
   const [ query, setQuery ] = useState(searchParams.get('query')?.toString() || "");
   const { replace } = useRouter();
-  const pathname = usePathname();
-
+  //const pathname = usePathname();
 
   const handleSearch = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,10 +20,7 @@ export default function Search({ placeholder }: {placeholder: string}) {
     } else {
       params.delete('query');
     }
-    //const response = await fetch(`/api/search?${params.toString()}`);
-    //const { result } = await response.json();
-    replace(`${pathname}?${params.toString()}`);
-    //setFeed(result);
+    replace(`/?${params.toString()}`);
   }
 
   return (
