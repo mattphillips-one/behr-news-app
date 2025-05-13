@@ -33,7 +33,7 @@ export default function FeaturedList() {
     <section className='flex flex-col gap-6'>
       {featuredItems.map((newsItem: NewsItem, i: number) => {
         return (
-          <div className="snap-start min-w-xs px-6 md:px-0"
+          <div className=""
             key={i}>
             <FeaturedCard item={newsItem}/>
           </div>

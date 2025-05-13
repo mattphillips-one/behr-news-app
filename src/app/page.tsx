@@ -12,7 +12,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
   const query = searchParams?.query || '';
 
   return (
-    <section className='flex flex-col px-4'>
+    <section className='flex flex-col md:px-4'>
 
       <div className="flex flex-col pt-6 gap-2">
         <h1 className={`${fonts.radley} text-2xl/10 border-b-1 border-neutral-600 border-dotted mx-3 md:ml-0`}>
@@ -29,7 +29,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
           <h1 className={`${fonts.radley} text-2xl/10 border-b-1 border-neutral-600 border-dotted mx-3 md:ml-0`}>
             Featured
           </h1>
-          <div className='pt-1 md:mr-3'>
+          <div className='px-5 pt-1 md:mr-3'>
             <FeaturedList />
           </div>
         </div>
@@ -40,10 +40,10 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
             Search
           </h1>
           {/*<h1 className={`${fonts.lora} text-2xl font-light self-center py-2`}>Search</h1>*/}
-          <div className='pl-2'>
+          <div className=''>
             <Search placeholder="Search ..." />
           </div>
-          <div className='px-4 pb-5'>
+          <div className='px-5 pb-5'>
             {(query !== '') ? 
               <Suspense key={query} fallback={<Loading />}>
                 <SearchResults query={query} log={false} />

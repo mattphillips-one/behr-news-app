@@ -30,10 +30,10 @@ export default function LatestList() {
   ];
 
   return (
-    <section className='flex snap-x snap-mandatory overflow-x-scroll gap-1 md:gap-6 divide-x-[0.5px] divide-solid divide-neutral-300 no-scrollbar'>
+    <section className='flex flex-row snap-x snap-mandatory overflow-x-scroll md:overflow-auto gap-1 md:gap-6 divide-x-[0.5px] divide-solid divide-neutral-300 no-scrollbar'>
       {latestItems.map((newsItem: NewsItem, i: number) => {
         return (
-          <div className="snap-start min-w-xs px-5"
+          <div className="min-w-xs md:w-1/3 snap-start px-5"
             key={i}>
             <FeaturedCard item={newsItem}/>
           </div>

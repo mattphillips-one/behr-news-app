@@ -30,10 +30,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className='flex h-[60vh] flex-col mb-10'>
+        <main className='flex h-[140vh] flex-col mb-10'>
           <nav className='flex flex-col top-0 sticky'>
             <div className='flex justify-center bg-black '>
-              <a href='/' className={`${fonts.ovo} text-white text-2xl text-center p-5`}>
+              <a href='/' className={`${fonts.ovo} text-white text-xl md:text-2xl text-center px-5 py-3 md:py-5`}>
                 Business Environment & Human Rights News
               </a>
             </div>
