@@ -6,6 +6,10 @@ import Loading from '@/app/components/ui/load-dots';
 import FeaturedList from "./components/FeaturedList";
 import LatestList from "@/app/components/LatestList";
 
+/*
+  TODO: create programmatic trending bar
+*/
+
 
 export default async function Home(props: {searchParams?: Promise<{query?: string}>}) {
   const searchParams = await props.searchParams;
@@ -35,15 +39,29 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
         </div>
         
     
-        <div className='flex flex-col pt-4 md:pt-6 md:w-2/3 max-w-3xl md:pl-6'>
-          <h1 className={`${fonts.radley} text-2xl/10  md:border-t-0 border-b-1 border-neutral-600 border-dotted mx-3 md:ml-0`}>
+        <div className='flex flex-col pt-4 md:pt-6 px-4 md:px-0 md:w-3/5'>
+          <h1 className={`${fonts.radley} text-2xl/10  md:border-t-0 border-b-1 border-neutral-600 border-dotted  md:ml-0`}>
             Search
           </h1>
+
+          {/* Trending bar: create programmatically */}
+          <span className={`flex gap-3 ${fonts.outfit} pr-3 py-2`}>
+            <p>Trending: </p>
+            <a href='/?query=coffee'>coffee</a>
+            <p className='text-red-600'>•</p>
+            <a href='/?query=mining'>mining</a>
+            <p className='text-red-600'>•</p>
+            <a href='/?query=uyghur'>Uyghur</a>
+            <p className='text-red-600'>•</p>
+            <a href='/?query=oil'>oil</a>
+          </span>
+
+
           {/*<h1 className={`${fonts.lora} text-2xl font-light self-center py-2`}>Search</h1>*/}
           <div className=''>
             <Search placeholder="Search ..." />
           </div>
-          <div className='px-5 pb-5'>
+          <div className='pb-5'>
             {(query !== '') ? 
               <Suspense key={query} fallback={<Loading />}>
                 <SearchResults query={query} log={false} />
