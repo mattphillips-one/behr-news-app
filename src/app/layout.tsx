@@ -30,10 +30,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className='flex min-h-screen flex-col my-3 md:px-2 mb-10'>
-          <a href='/' className={`${fonts.ovo} text-2xl text-center pb-6`}>Business Environment & Human Rights News</a>
-          {/*<Navbar />*/}
-          <TopicNavbar />
+        <main className='flex h-[60vh] flex-col mb-10'>
+          <nav className='flex flex-col top-0 sticky'>
+            <div className='flex justify-center bg-black '>
+              <a href='/' className={`${fonts.ovo} text-white text-2xl text-center p-5`}>
+                Business Environment & Human Rights News
+              </a>
+            </div>
+            <TopicNavbar />
+          </nav>
+          
+
           {children}
         </main>
       </body>

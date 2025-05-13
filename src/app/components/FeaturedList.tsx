@@ -51,7 +51,7 @@ function FeaturedCard({ item }: {item: NewsItem}) {
       target='_blank'
     >
       <div>
-        <p className={`${fonts.lato} text-sm md:text-md text-stone-600 dark:invert`}>{item.pubId}</p>
+        <p className={`${fonts.lato} text-sm md:text-md text-stone-600 dark:text-stone-300`}>{item.pubId}</p>
       </div>
       <div>
         <h2 className={`${fonts.merriweather} text-lg md:text-xl group-hover:underline decoration-1`}>{item.title}</h2>
@@ -60,7 +60,7 @@ function FeaturedCard({ item }: {item: NewsItem}) {
         <p className={`${fonts.lato} hidden text-sm md:text-md md:block`}>{item.description}</p>
       </div>
       <div>
-        <p className={`${fonts.lato} text-sm md:text-md text-stone-600 dark:invert`}>{item.pubDate}</p>
+        <p className={`${fonts.lato} text-sm md:text-md text-stone-600 dark:text-stone-300`}>{item.pubDate}</p>
       </div>
     </a>
   );
