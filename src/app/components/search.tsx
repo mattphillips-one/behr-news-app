@@ -1,15 +1,14 @@
 'use client';
 
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { BlackButton } from '@/app/components/ui/button-black';
 import { fonts } from '@/app/components/ui/fonts';
 
-export default function Search({ placeholder }: {placeholder: string}) {
+export default function Search({ placeholder, value }: {placeholder: string, value: string}) {
   const searchParams = useSearchParams();
   const [ query, setQuery ] = useState(searchParams.get('query')?.toString() || "");
-  const { replace } = useRouter();
-  //const pathname = usePathname();
+  const router = useRouter();
 
   const handleSearch = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,8 +19,15 @@ export default function Search({ placeholder }: {placeholder: string}) {
     } else {
       params.delete('query');
     }
-    replace(`/?${params.toString()}`);
+    router.push(`/?${params.toString()}#search`);
   }
+
+  // we pass query param from homepage into 'value' so that when
+  // the search query is updated from the outside, the search bar
+  // updates with the value typed out
+  useEffect(() => {
+    setQuery(value);
+  }, [value]);
 
   return (
     <div className='flex flex-col w-full'>

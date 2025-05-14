@@ -40,7 +40,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
         </div>
         
     
-        <div className='flex flex-col pt-4 md:pt-6 px-4 md:px-0 md:w-3/5'>
+        <div className='flex flex-col pt-4 md:pt-6 px-4 md:px-0 md:w-3/5' id='search'>
           <h1 className={`${fonts.radley} text-2xl/10  md:border-t-0 border-b-1 border-neutral-600 border-dotted  md:ml-0`}>
             Search
           </h1>
@@ -51,8 +51,8 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
             <TrendingBar />
           </span>
 
-          <Search placeholder="Search ..." />
-          <div className='pb-5'>
+          <Search placeholder="Search ..." value={query}/>
+          <div className='pb-10'>
             {(query !== '') ? 
               <Suspense key={query} fallback={<Loading />}>
                 <SearchResults query={query} log={false} />

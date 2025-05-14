@@ -12,7 +12,7 @@ const TrendingBar = async () => {
     <div className="flex flex-row">
       {trending.map((term: string, index: number) => (
         <div key={term} className='flex flex-row'>
-          <Link href={`/?query=${term}`}
+          <Link href={`/?query=${term}#search`}
             className="hover:text-neutral-600"
           >
             {term}
