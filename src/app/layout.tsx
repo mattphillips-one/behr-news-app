@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className='flex h-[140vh] flex-col mb-10'>
+        <main className='flex h-[140vh] flex-col'>
           <nav className='flex flex-col top-0 sticky'>
             <div className='flex justify-center bg-black '>
               <a href='/' className={`${fonts.ovo} text-white text-xl md:text-2xl text-center px-5 py-3 md:py-5`}>
@@ -38,7 +38,9 @@ export default function RootLayout({
             </div>
             <Navbar />
           </nav>
-          {children}
+          <section className='flex flex-col pb-10'>
+            {children}
+          </section>
         </main>
       </body>
     </html>
