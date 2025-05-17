@@ -13,7 +13,10 @@ export default function AboutPage() {
       <p className={`${fonts.ovo} justify-self-end mt-20`}>
         This project was created by <a className='text-blue-600'
         href='https://mattphillips.space' 
-        target='_blank'>Matthew Phillips</a>
+        target='_blank'>Matthew Phillips</a>.
+        Read my blog post <a className='text-blue-600'
+        href='https://www.mattphillips.space/blog/am-i-funding-human-rights-abuses' 
+        target='_blank'>here</a> about the story behind this project.
       </p>
     </section>
   )
