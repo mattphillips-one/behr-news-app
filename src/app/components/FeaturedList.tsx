@@ -1,5 +1,5 @@
 import { NewsItem } from "../types/types";
-import Card from "./ui/Card";
+import Card from "@/app/components/ui/Card";
 import { fonts } from "./ui/fonts";
 
 export default function FeaturedList() {
@@ -35,33 +35,10 @@ export default function FeaturedList() {
         return (
           <div className=""
             key={i}>
-            <FeaturedCard item={newsItem}/>
+            <Card item={newsItem} descVisibility={"always"}/>
           </div>
         );
       })}
     </section>
-  );
-}
-
-function FeaturedCard({ item }: {item: NewsItem}) {
-  
-  return (
-    <a className='flex flex-col group gap-1 active:text-neutral-600'
-      href={item.url}
-      target='_blank'
-    >
-      <div>
-        <p className={`${fonts.lato} text-sm md:text-md text-stone-600 dark:text-stone-300`}>{item.pubId}</p>
-      </div>
-      <div>
-        <h2 className={`${fonts.merriweather} text-lg md:text-xl group-hover:underline decoration-1`}>{item.title}</h2>
-      </div>
-      <div>
-        <p className={`${fonts.lato} text-sm md:text-md`}>{item.description}</p>
-      </div>
-      <div>
-        <p className={`${fonts.lato} text-sm md:text-md text-stone-600 dark:text-stone-300`}>{item.pubDate}</p>
-      </div>
-    </a>
   );
 }

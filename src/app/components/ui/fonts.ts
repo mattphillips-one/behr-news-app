@@ -1,4 +1,5 @@
-import { Ovo, Merriweather, Lora, Inter, Nunito_Sans, Lato, Outfit, Noto_Sans, Newsreader, Radley, STIX_Two_Text } from 'next/font/google';
+import { Ovo, Merriweather, Lora, Inter, Nunito_Sans, Lato, Outfit, Noto_Sans, Newsreader, 
+    Radley, STIX_Two_Text, Libre_Franklin, Open_Sans, Chonburi } from 'next/font/google';
 
 const ovo = Ovo({
     subsets: ["latin"],
@@ -52,6 +53,21 @@ const radley = Radley({
 
 const stix = STIX_Two_Text({
     subsets: ["latin"],
+    weight: ["400", "700"]
+});
+
+const libre_franklin = Libre_Franklin({
+    subsets: ["latin"],
+    weight: ["300", "400", "500"]
+});
+
+const open_sans = Open_Sans({
+    subsets: ["latin"],
+    weight: ["300", "400"]
+});
+
+const chonburi = Chonburi({
+    subsets: ["latin"],
     weight: ["400"]
 })
 
@@ -66,5 +82,8 @@ export const fonts = {
     noto_sans: noto_sans.className,
     newsreader: newsreader.className,
     radley: radley.className,
-    stix: stix.className
+    stix: stix.className,
+    libre_franklin: libre_franklin.className,
+    open_sans: open_sans.className,
+    chonburi: chonburi.className
 }

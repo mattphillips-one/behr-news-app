@@ -18,7 +18,7 @@ export default async function SearchResults({ query, log }: { query: string, log
         {newsItems.map((newsItem: NewsItem, i: number) => {
           return (
             <li key={i}>
-              <Card item={newsItem}/>
+              <Card item={newsItem} descVisibility='always'/>
             </li>
           );
         })}
