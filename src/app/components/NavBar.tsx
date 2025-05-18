@@ -25,14 +25,14 @@ export default function Navbar() {
 
   return (
     <nav>
-    <div className='flex flex-row items-center md:items-baseline w-full text-white border-b-1 border-neutral-300 dark:border-neutral-500 px-5 pb-2 justify-between bg-neutral-900 dark:bg-black'>
+    <div className='flex flex-row items-center md:items-baseline w-full text-white border-b-1 border-neutral-300 dark:border-neutral-500 px-5 pb-2 justify-between bg-neutral-900 dark:bg-neutral-950'>
       <a href='/' className={`${fonts.stix} font-bold text-white text-xl md:text-2xl w-3/4 md:w-full text-left pt-3`}>
         Business Environment & Human Rights News
       </a>
       
       <div className='hidden md:flex flex-row gap-5'>
         {Object.entries(navItems).map(([key, value]) => (
-          <Link className={`${fonts.noto_sans} font-medium hover:text-neutral-400 md:active:text-black`}
+          <Link className={`${fonts.noto_sans} font-medium hover:text-neutral-400 md:active:text-neutral-400`}
             href={key}
             key={key}
           >
@@ -60,7 +60,7 @@ export default function Navbar() {
 
 const SideMenu = ({ closeMenu }: { closeMenu: () => void }) => {
   return (
-    <div className='w-full z-50 bg-neutral-900 dark:bg-black'>
+    <div className='w-full z-50 bg-neutral-900 dark:bg-neutral-950'>
       <ul className={`flex flex-row gap-5 py-3 ${fonts.outfit} justify-center items-center border-b-1 dark:border-neutral-500`}>
         {Object.entries(navItems).map(([key, value]) => {
           return (

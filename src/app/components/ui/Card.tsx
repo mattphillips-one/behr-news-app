@@ -26,7 +26,7 @@ export default function Card({ item, descVisibility }: Props) {
       target='_blank'
     >
       <div>
-        <p className={`${fonts.inter} font-light text-sm md:text-md text-stone-600 dark:text-stone-300`}>{item.pubId}</p>
+        <p className={`${fonts.inter} font-light text-sm md:text-md text-stone-600 dark:text-stone-200`}>{item.pubId}</p>
       </div>
       <div>
         <h2 className={`${fonts.libre_franklin} font-semibold text-neutral-800 text-lg md:text-xl group-hover:text-red-500 group-active:text-red-600 dark:text-neutral-100`}>{item.title}</h2>
@@ -35,7 +35,7 @@ export default function Card({ item, descVisibility }: Props) {
         <p className={`${fonts.open_sans} ${visibility} font-normal text-neutral-800 text-md md:text-lg dark:text-neutral-200`}>{item.description}</p>
       </div>
       <div>
-        <p className={`${fonts.inter} font-light text-sm md:text-md text-stone-600 dark:text-stone-300`}>{item.pubDate}</p>
+        <p className={`${fonts.inter} font-light text-sm md:text-md text-stone-600 dark:text-stone-200`}>{item.pubDate}</p>
       </div>
     </a>
   );
