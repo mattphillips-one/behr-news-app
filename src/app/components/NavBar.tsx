@@ -64,7 +64,7 @@ const SideMenu = ({ closeMenu }: { closeMenu: () => void }) => {
       <ul className={`flex flex-row gap-5 py-3 ${fonts.outfit} justify-center items-center border-b-1 dark:border-neutral-500`}>
         {Object.entries(navItems).map(([key, value]) => {
           return (
-            <li key={key}><a className={`font-normal text-lg active:text-neutral-500`} onClick={closeMenu} href={key}>{value}</a></li>
+            <li key={key}><a className={`font-normal text-lg text-white active:text-neutral-500`} onClick={closeMenu} href={key}>{value}</a></li>
           )
         })}
       </ul>
