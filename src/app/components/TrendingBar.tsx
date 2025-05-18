@@ -6,10 +6,10 @@ const TrendingBar = async () => {
   //const response = await fetch(`${process.env.API_PORT}/trendingSearches`);
   //const { trending } = await response.json();
 
-  const trending = ["coffee", "mining", "oil", "Uyghur"];
+  const trending = ["coffee", "mining", "oil", "Uyghur", "apple", "amazon", "shein"];
   
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row overflow-y-scroll no-scrollbar mask-to-r md:mask-none">
       {trending.map((term: string, index: number) => (
         <div key={term} className='flex flex-row'>
           <Link href={`/?query=${term}#search`}

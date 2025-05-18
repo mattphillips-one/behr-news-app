@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <main className='flex h-[140vh] flex-col'>
-          <nav className='flex flex-col top-0 sticky'>
+          <nav className='flex flex-col top-0 sticky z-100'>
             <Navbar />
           </nav>
           <section className='flex flex-col pb-10'>

@@ -46,7 +46,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
           </h1>
 
           {/* Trending bar: create programmatically */}
-          <span className={`flex flex-row ${fonts.outfit} pr-3 py-2`}>
+          <span className={`flex flex-row ${fonts.outfit} py-2`}>
             <p className="pr-3">Trending: </p>
             <TrendingBar />
           </span>

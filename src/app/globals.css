@@ -5,6 +5,18 @@
   --foreground: #171717;
 }
 
+@utility mask-to-r {
+    mask: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .9) 5%);
+}
+
+@utility mask-x {
+    mask: radial-gradient(rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .9) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+@utility mask-none {
+    mask: linear-gradient(to left, rgba(0, 0, 0, 1) 0% rgba(0, 0, 0, 1) 100%)
+}
+
 @layer utilities {
     .no-scrollbar::-webkit-scrollbar {
       display: none;
@@ -13,7 +25,7 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
-  }
+}
 
 @theme inline {
   --color-background: var(--background);
