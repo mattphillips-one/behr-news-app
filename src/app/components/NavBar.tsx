@@ -44,7 +44,7 @@ export default function Navbar() {
       <button className='w-6 md:hidden cursor-pointer'
         onClick={toggleSideMenu}
       >
-        <Image className='dark:invert'
+        <Image className='invert'
           src={isVisible ? assets.close_black : assets.menu_black}
           alt='menu icon'
         />
@@ -60,7 +60,7 @@ export default function Navbar() {
 
 const SideMenu = ({ closeMenu }: { closeMenu: () => void }) => {
   return (
-    <div className='w-full z-50 transition duration-500'>
+    <div className='w-full z-50 bg-neutral-900 dark:bg-black'>
       <ul className={`flex flex-row gap-5 py-3 ${fonts.outfit} justify-center items-center border-b-1 dark:border-neutral-500`}>
         {Object.entries(navItems).map(([key, value]) => {
           return (
