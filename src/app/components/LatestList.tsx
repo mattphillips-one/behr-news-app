@@ -30,7 +30,7 @@ export default function LatestList() {
   ];
 
   return (
-    <section className='flex flex-row snap-x snap-mandatory overflow-x-scroll md:overflow-auto gap-1 md:gap-6 divide-x-[0.5px] divide-solid divide-neutral-300 no-scrollbar'>
+    <section className='flex flex-row snap-x snap-mandatory overflow-x-scroll md:overflow-auto gap-1 md:gap-6 divide-x-[0.5px] divide-solid divide-neutral-300 dark:divide-neutral-700 no-scrollbar'>
       {latestItems.map((newsItem: NewsItem, i: number) => {
         return (
           <div className="min-w-xs md:w-1/3 snap-start px-5"
