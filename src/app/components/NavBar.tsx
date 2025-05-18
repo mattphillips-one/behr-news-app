@@ -13,7 +13,7 @@ const navItems = {
 
 export default function Navbar() {
 
-  const sideMenuRef = useRef<HTMLDivElement>();
+  const sideMenuRef = useRef<HTMLDivElement>(null);
 
   function openSideMenu() {
     sideMenuRef.current!.style.transform = 'translateX(-16rem)';
@@ -54,7 +54,7 @@ export default function Navbar() {
   )
 }
 
-const SideMenu = ({ref, closeMenu }) => {
+const SideMenu = ({ ref, closeMenu }) => {
   return (
     <div className='flex md:hidden flex-col py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-white/[.96] dark:bg-black/[.91] transition duration-500'
       ref={ref}
