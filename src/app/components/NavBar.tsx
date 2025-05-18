@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
 import { fonts } from "./ui/fonts";
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const navItems = {
   '/': "home",
@@ -13,18 +13,19 @@ const navItems = {
 
 export default function Navbar() {
 
-  const sideMenuRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  function openSideMenu() {
-    sideMenuRef.current!.style.transform = 'translateX(-16rem)';
+  function toggleSideMenu() {
+    setIsVisible(!isVisible);
   }
   function closeSideMenu() {
-    sideMenuRef.current!.style.transform = 'translateX(16rem)';
+    setIsVisible(false);
   }
 
 
   return (
-    <nav className='flex flex-row items-center md:items-baseline w-full text-white border-b-1 border-neutral-300 dark:border-neutral-500 px-5 pb-2 justify-between bg-neutral-900 dark:bg-black'>
+    <nav>
+    <div className='flex flex-row items-center md:items-baseline w-full text-white border-b-1 border-neutral-300 dark:border-neutral-500 px-5 pb-2 justify-between bg-neutral-900 dark:bg-black'>
       <a href='/' className={`${fonts.stix} font-bold text-white text-xl md:text-2xl w-3/4 md:w-full text-left pt-3`}>
         Business Environment & Human Rights News
       </a>
@@ -41,36 +42,29 @@ export default function Navbar() {
       </div>
 
       <button className='w-6 md:hidden cursor-pointer'
-        onClick={openSideMenu}
+        onClick={toggleSideMenu}
       >
         <Image className='dark:invert'
-          src={assets.menu_black}
+          src={isVisible ? assets.close_black : assets.menu_black}
           alt='menu icon'
         />
       </button>
-      <SideMenu ref={sideMenuRef} closeMenu={closeSideMenu}/>
-      
+    </div>
+    {isVisible ? 
+        <SideMenu closeMenu={closeSideMenu}/>
+      : null
+    }
     </nav>
   )
 }
 
-const SideMenu = ({ ref, closeMenu }) => {
+const SideMenu = ({ closeMenu }: { closeMenu: () => void }) => {
   return (
-    <div className='flex md:hidden flex-col py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-white/[.96] dark:bg-black/[.91] transition duration-500'
-      ref={ref}
-    >
-      <div className='absolute right-6 top-7 cursor-pointer'
-        onClick={closeMenu}
-      >
-        <Image className='w-5 dark:invert'
-          src={assets.close_black}
-          alt=''
-        />
-      </div>
-      <ul className={`flex flex-col gap-5 mt-5 ${fonts.outfit}`}>
+    <div className='w-full z-50 transition duration-500'>
+      <ul className={`flex flex-row gap-5 py-3 ${fonts.outfit} justify-center items-center border-b-1 dark:border-neutral-500`}>
         {Object.entries(navItems).map(([key, value]) => {
           return (
-            <li key={key}><a className={`font-normal text-lg`} onClick={closeMenu} href={key}>{value}</a></li>
+            <li key={key}><a className={`font-normal text-lg active:text-neutral-500`} onClick={closeMenu} href={key}>{value}</a></li>
           )
         })}
       </ul>
