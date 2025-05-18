@@ -20,7 +20,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
     <section className='flex flex-col md:px-4'>
 
       <div className="flex flex-col pt-6 gap-2">
-        <h1 className={`${fonts.outfit} font-bold text-neutral-500 text-xl/10 border-b-1 border-neutral-600 border-dotted pl-5 md:ml-0`}>
+        <h1 className={fonts.section_header}>
           Latest
         </h1>
         <div className='pt-1'>
@@ -31,7 +31,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
       <div className='flex flex-col md:flex-row justify-between'>
 
         <div className="flex flex-col md:w-1/3 pt-6 gap-2">
-          <h1 className={`${fonts.outfit} font-bold text-neutral-500 text-xl/10 border-b-1 border-neutral-600 border-dotted pl-5 md:ml-0`}>
+          <h1 className={fonts.section_header}>
             Featured
           </h1>
           <div className='px-5 pt-1 md:mr-3'>
@@ -41,7 +41,7 @@ export default async function Home(props: {searchParams?: Promise<{query?: strin
         
     
         <div className='flex flex-col pt-4 md:pt-6 px-4 md:px-0 md:w-3/5' id='search'>
-          <h1 className={`${fonts.outfit} font-bold text-neutral-500 text-xl/10 md:border-t-0 border-b-1 border-neutral-600 border-dotted  md:ml-0`}>
+          <h1 className={`${fonts.section_header} md:border-t-0`}>
             Search
           </h1>
 

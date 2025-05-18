@@ -85,5 +85,6 @@ export const fonts = {
     stix: stix.className,
     libre_franklin: libre_franklin.className,
     open_sans: open_sans.className,
-    chonburi: chonburi.className
+    chonburi: chonburi.className,
+    section_header: `${outfit} font-bold text-neutral-500 text-xl/10 border-b-1 border-neutral-600 border-dotted pl-5 md:ml-0 dark:text-neutral-400`
 }
