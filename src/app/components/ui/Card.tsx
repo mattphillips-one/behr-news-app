@@ -32,7 +32,7 @@ export default function Card({ item, descVisibility }: Props) {
         <h2 className={`${fonts.libre_franklin} font-semibold text-neutral-900 text-lg md:text-xl group-hover:text-red-500 group-active:text-red-500 dark:text-neutral-100`}>{item.title}</h2>
       </div>
       <div>
-        <p className={`${fonts.open_sans} ${visibility} font-normal text-neutral-800 text-md md:text-lg dark:text-neutral-200`}>{item.description}</p>
+        <p className={`${fonts.open_sans} ${visibility} font-normal text-neutral-800 text-md md:text-lg/6 dark:text-neutral-200`}>{item.description}</p>
       </div>
       <div>
         <p className={`${fonts.inter} font-light text-sm md:text-md text-stone-600 dark:text-stone-200`}>{item.pubDate}</p>
