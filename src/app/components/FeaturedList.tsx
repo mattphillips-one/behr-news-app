@@ -26,6 +26,13 @@ export default function FeaturedList() {
       description: "How labor violations enter Starbucks’ and Nestlé’s Chinese coffee supply chain",
       url: 'https://coffeewatch.org/ghost-farms-and-coffee-laundering/',
       pubDate: '29 Nov 2024'
+    },
+    {
+      pubId: "Friends of the Earth",
+      title: "Cultivating Conflict: How Astra Agro Lestari, Brands, and Big Finance Capitalize on Indonesia’s Governance Gaps",
+      url: 'https://foe.org/resources/cultivating-conflict-aal/',
+      description: "Household consumer brands and global financiers face mounting reputational and financial risks by enabling conflict palm oil from Astra Agro Lestari, Indonesia’s second largest producer",
+      pubDate: '25 June 2024'
     }
   ];
 
