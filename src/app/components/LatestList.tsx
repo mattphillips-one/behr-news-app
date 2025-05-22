@@ -2,10 +2,10 @@ import { NewsItem } from "../types/types";
 import Card from "@/app/components/ui/Card";
 import { fonts } from "./ui/fonts";
 
-export default function LatestList() {
+export default async function LatestList() {
 
   // Fetch from database?
-  const latestItems: NewsItem[] = [
+  const latestItemsHARD: NewsItem[] = [
     {
       pubId: 'The Guardian',
       title: '‘Morally repugnant’: Brazilian workers sue coffee supplier to Starbucks over ‘slavery-like conditions’',
@@ -29,13 +29,18 @@ export default function LatestList() {
     }
   ];
 
+  const port = process.env.API_PORT;
+  const response = await fetch(`${port}/latest`);
+  const { results } = await response.json();
+  const latestItems = results.slice(0,5) || [];
+
   return (
     <section className='flex flex-row snap-x snap-mandatory overflow-x-scroll md:overflow-auto gap-1 md:gap-6 divide-x-[0.5px] divide-solid divide-neutral-300 dark:divide-neutral-700 no-scrollbar mask-to-r md:mask-none'>
       {latestItems.map((newsItem: NewsItem, i: number) => {
         return (
-          <div className="min-w-xs md:w-1/3 snap-start px-5"
+          <div className="min-w-xs md:min-w-md snap-start px-5"
             key={i}>
-            <Card item={newsItem} descVisibility="hideSmall"/>
+            <Card item={newsItem} descriptionVis="max150"/>
           </div>
         );
       })}

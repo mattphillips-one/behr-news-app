@@ -42,7 +42,7 @@ export default function FeaturedList() {
         return (
           <div className=""
             key={i}>
-            <Card item={newsItem} descVisibility={"always"}/>
+            <Card item={newsItem} descriptionVis={"always"}/>
           </div>
         );
       })}
