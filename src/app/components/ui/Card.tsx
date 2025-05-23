@@ -26,7 +26,8 @@ export default function Card({ item, descriptionVis }: Props) {
   }
   
   return (
-    <a className='flex flex-col group gap-1 active:text-neutral-600'
+    <div className='flex flex-col justify-between h-full'>
+    <a className='grid grid-col-1 content-start group gap-1 active:text-neutral-600'
       href={item.url}
       target='_blank'
     >
@@ -39,9 +40,8 @@ export default function Card({ item, descriptionVis }: Props) {
       <div>
         <p className={`${fonts.open_sans} ${visibility} font-normal text-neutral-800 text-md md:text-md/6 dark:text-neutral-200`}>{item.description}</p>
       </div>
-      <div>
-        <p className={`${fonts.inter} font-light text-sm md:text-md text-stone-600 dark:text-stone-200`}>{item.pubDate}</p>
-      </div>
     </a>
+      <p className={`${fonts.inter} font-light text-sm md:text-md text-stone-600 dark:text-stone-200`}>{item.pubDate}</p>
+    </div>
   );
 }

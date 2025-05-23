@@ -32,7 +32,7 @@ export default async function LatestList() {
   const port = process.env.API_PORT;
   const response = await fetch(`${port}/latest`);
   const { results } = await response.json();
-  const latestItems = results.slice(0,5) || [];
+  const latestItems = results || [];
 
   return (
     <section className='flex flex-row snap-x snap-mandatory overflow-x-scroll md:overflow-auto gap-1 md:gap-6 divide-x-[0.5px] divide-solid divide-neutral-300 dark:divide-neutral-700 no-scrollbar mask-to-r md:mask-none'>
@@ -40,7 +40,7 @@ export default async function LatestList() {
         return (
           <div className="min-w-xs md:min-w-md snap-start px-5"
             key={i}>
-            <Card item={newsItem} descriptionVis="max150"/>
+            <Card item={newsItem} descriptionVis="never"/>
           </div>
         );
       })}
